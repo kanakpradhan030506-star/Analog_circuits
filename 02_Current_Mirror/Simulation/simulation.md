@@ -45,7 +45,7 @@ IREF = ______ µA
 
 ### Output Current
 
-IOUT = ______ µA
+IOUT = 77.496 µA
 
 ### Current Error
 
@@ -55,7 +55,7 @@ Error =  0 %
 
 ### Minimum Compliance Voltage
 
-VOUT(min) = ______ V
+VOUT(min) = 1.02054 V
 
 ### Output Resistance
 
