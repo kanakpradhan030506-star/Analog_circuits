@@ -45,3 +45,7 @@ design and simulation.
 - Circuit simulation: Compcarta- Circuit Pro
 - Technology: [Technology/PDK]
 - MOSFET model: [Model]
+
+## Circuit 
+<img width="1052" height="837" alt="image" src="https://github.com/user-attachments/assets/d68fffb9-a476-46d5-a495-4b80cfaaf589" />
+
