@@ -6,12 +6,11 @@
 |---|---:|
 | Supply Voltage (VDD) | 1.8 V |
 | Reference Current (IREF) | 100 µA |
-| NMOS Length (L) | 1 µm |
-| NMOS Width (W) | 10 µm |
-| W/L | 10 |
-| Threshold Voltage (VTH) | [From model] |
-| μnCox | [From model] |
-| λ | [From model] |
+| NMOS Length (L) | 0.15 µm |
+| NMOS Width (W) | 1 µm |
+| W/L | 6.67 |
+| Threshold Voltage (VTH) | 0.7V |
+| μnCox | 150µA/V^2 |
 
 ## 1. Overdrive Voltage
 
@@ -19,8 +18,18 @@ The overdrive voltage is:
 
 VOV = VGS - VTH
 
-The required VOV will be determined using the MOSFET model
-parameters.
+For the selected reference current, VOV is calculated from the
+long-channel MOSFET equation:
+
+VOV = √(2IREF / (μnCox(W/L)))
+
+Using the given design parameters:
+
+VOV = √[2(100 µA) / (150 µA/V² × 6.67)]
+
+Therefore:
+
+VOV ≈ 0.447 V
 
 ## 2. Reference Current
 
@@ -31,6 +40,7 @@ IREF = (1/2) μnCox (W/L) VOV²
 Therefore:
 
 VOV = √(2IREF / (μnCox(W/L)))
+VOV = 0.447 V
 
 ## 3. Gate-Source Voltage
 
@@ -38,7 +48,13 @@ Once VOV is known:
 
 VGS = VTH + VOV
 
-This voltage is established by the diode-connected transistor M1.
+VGS = 0.7 + 0.447
+
+Therefore:
+
+VGS ≈ 1.147 V
+
+This voltage is established by the diode-connected transistor M1.  
 
 ## 4. Output Current
 
@@ -97,8 +113,8 @@ These values will be updated after simulation.
 
 | Parameter | Calculated | Simulated |
 |---|---:|---:|
-| VGS | — | — |
+| VGS | 0.9V | — |
 | IREF | 100 µA | — |
 | IOUT | 100 µA | — |
-| Current Error | — | — |
-| Minimum VOUT | — | — |
+| Current Error | 0 | — |
+
